@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies and Entertainment</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link rel="Stylesheet" href="Style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <section id="landing-page">
+        <nav>
+            <figure>
+                <img id="movie-logo" src="/assets/navlogomovie-time-600w-324455369.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                 <a href="#" class="
+                 nav__link--anchor
+                 link__hover-effect--black
+                 nav__link">Home</a>
+                </li>
+                <li class="nav__link">
+                 <a href="#" class="
+                 nav__link--anchor
+                 link__hover-effect--black
+                 nav__link">Movies</a>
+                </li>
+                <li class="nav__link " onclick="toggleModal()">
+                 <a href="#" class="
+                 nav__link--anchor
+                 link__hover-effect--black
+                 nav__link">TV Shows</a>
+                </li>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <i class="fas fa-sun togle-icon"></i>
+                <div class="toggle__ball"></div>
+                </div>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">Welcome,</h1>
+                <h1 class="secondary__title">Hundreds of movies, TV Shows to enjoy. Explore now.</h1> 
+                <form action="">
+                <div class="input__action">
+                <input type="text" placeholder="Search for a movie or a tv show">
+                <button class="btn__search">Search</button>
+            </div>
+        </form>
+        </div>
+        </header>
+</section>
+
+<section>
+    <div class="container">
+    <div class="movies__header">
+    <h1 class="movie__list-title">What's Popular</h1>
+</div>
+    <select id="filter" onchange="filterMovies(event)">
+        <option value="disabled selected">Sort</option>
+        <option value="trending_week">Trending this week</option>
+        <option value="trending_day">Trending today</option>
+    </select>
+</div>
+    <div id="movies">    
+    </div> 
+</section>
+   
+    </body>
+</html>
+
+    

@@ -1,0 +1,264 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #032541;
+    color: white;
+}
+
+body.active {
+    background-color: white;
+    color: black;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+.header {
+    background-image:url(assets/backgroundblue-film-reel-movie-background-front-hollywood-city-night-vector-illustration-stripe-shiny-93447676.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+
+
+/*
+
+NAV
+
+*/
+
+nav {
+    width: 100%;
+    max-width: 1200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+#movie-logo {
+    width: 100px;
+}
+
+.nav__link--list {
+    display: flex;
+}
+
+.nav__link {
+    margin: 0 12px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+.toggle {
+    width: 60px;
+    height: 25px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle.active {
+    background-color: #032541;
+}
+
+.toggle-icon {
+    color: goldenrod;
+}
+
+.toggle__ball {
+    width: 25px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    right: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle__ball.active {
+    background-color: white;
+    transform: translateX(-30px);
+}
+
+/*.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: white;
+}
+
+menu__backdrop {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px;
+}
+
+.menu__link {
+     color: white;
+}
+
+.fas fa-bars {
+    font-size: 100px;
+    
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: white;
+}*/
+
+/*
+
+header
+
+*/
+
+.header__title {
+    font-size: 50px;
+}
+
+.secondary__title {
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+.header__content {
+    width: 100%;
+    max-width: 1500px;
+    padding:100px;
+}
+
+.input__action {
+    width: 100px;
+    max-width: 100%;
+}
+
+.input__action {
+
+    width: 1000px;
+    max-width: 100%;
+    position: relative;
+
+}
+
+.input__action input {
+
+    border: 2px solid rgb(233, 231, 231);
+    border-radius: 50px;
+    padding: 16px;
+    width: 100%;
+}
+
+.btn__search {
+    position: absolute;
+    background-color: rgb(46, 152, 188);
+    border-radius: 64px;
+    color: white;
+    border: none;
+    height: 90%;
+    font-size: 20px;
+    padding: 2px 32px;
+    margin: 0px 0px 0px 0px;
+    right: 0;
+}
+
+/*
+
+Main 
+
+*/
+
+/*.card {
+    background-color: #242424;
+}*/
+
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.movie__item {
+    margin-right: 32px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.title {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 20px;  
+}
+
+.movie_img-rounded {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;  
+    transition: all 1s ease-in-out;
+}
+
+.movie_img-rounded:hover {
+    transform: scale(1.2);
+}
+
+.movies__header {
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 24px;
+}
+
+
+
+
+
+
+
+
