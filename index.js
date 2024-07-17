@@ -1,67 +1,59 @@
 
 const apiKey = "fa8ee04ba5918558c5d3391ffff11615";
-const apiUrl = `https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}`;
-const moviesContainer = document.getElementById("movies");
+const apiUrl = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
+const img_Url = `https://image.tmdb.org/t/p/w1280/`;
+
+const main = document.getElementById('main');
+const search = document.getElementById('search')
+const form = document.getElementById('form')
+
+fetchMovies(apiUrl)
 
 async function fetchMovies() {
-	try {
+	
 		const response = await fetch(apiUrl);
 		const data = await response.json();
 
-		data.results.forEach(media => {
-			const movieCard = createMovieCard(media);
-			moviesContainer.appendChild(movieCard);
-		});
+		console.log(data.results);
+		showMovies(data.results);
+		
+	}
 
-	} catch (error) {
-			console.error("Error fetching data:", error);
+	function showMovies(data) {
+		main.innerHTML = '';
+
+		data.forEach(movie => {
+			const {title, name, poster_path} = movie;
+			const moviesElement = document.createElement ('div')
+			moviesElement.classList.add('movie');
+			moviesElement.innerHTML = `
+				<img src="${img_Url + poster_path}" alt="${title}"/>
+				<div class='movies_info'>
+				<h3>${title}</h3>
+				<div/>
+			`;
+			main.appendChild(moviesElement);
+		})
+	}
+
+	form.addEventListener('submit' , (e) =>{
+		e.preventDefault()
+		const searchTerm = search.value;
+
+		if(searchTerm){
+			fetchMovies(searchUrl+ '&query=' +searchTerm)
+		}else{
+			fetchMovies(apiKey)
 		}
-	}
-
-	function createMovieCard(media) {
-		const { title, name, backdrop_path } = media;
-
-		const movieCard = document.createElement("div");
-		movieCard.classList.add("movie__item")
-
-		movieCard.innerHTML = `
-		<img src="https://image.tmdb.org/t/p/w500/${backdrop_path}" class="movie_img-rounded">
-		<div class = "title">${title || name}</div>
-		`;
-		return movieCard;
-	}
-
-	fetchMovies();
+	})
 
 	const ball = document.querySelector(".toggle__ball");
-	const items = document.querySelectorAll("body,.toggle");
+    const items = document.querySelectorAll("body,.toggle");
 
-	ball.addEventListener("click",()=>{
-		items.forEach(item=>{
-			item.classList.toggle("active")
-		})
-		ball.classList.toggle("active")
-	})
-
-	const form = document.querySelector('form');
-	const container = document.querySelector('movies');
-
-	form.addEventListener('submit',(e)=>{
-		e.preventDefault();
-		let query = form.querySelector('input').value;
-		console.log(query);
-
-		fetchMovie(query);
-	})
-
-async function fetchMovie(searchTerm){
-	const req = await fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&s=${searchTerm}`)
-	const res = await req.json();
-	console.log(res);
-
-}
-
-function filterMovies(event) {
-	console.log(event)
-	
-}
+    ball.addEventListener("click",()=>{
+        items.forEach(item=>{
+            item.classList.toggle("active")
+        })
+        ball.classList.toggle("active")
+    })
